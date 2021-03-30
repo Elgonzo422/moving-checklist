@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
+# Devise is used for authentication\
+gem 'devise'
 # Autoprefixer is a tool to parse CSS and add vendor prefixes to CSS rules
 gem 'autoprefixer-rails'
 # Font-awesome allows for some small icons to be easily interacted with and imported
