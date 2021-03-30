@@ -1,2 +1,0 @@
-class CheckbocController < ApplicationController
-end
