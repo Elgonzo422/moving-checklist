@@ -17,19 +17,11 @@ ActiveRecord::Schema.define(version: 2021_03_30_130343) do
 
   create_table "checkboxes", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "task_id", null: false
     t.boolean "done"
+    t.string "task_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["task_id"], name: "index_checkboxes_on_task_id"
     t.index ["user_id"], name: "index_checkboxes_on_user_id"
-  end
-
-  create_table "tasks", force: :cascade do |t|
-    t.string "title"
-    t.text "relevant_info"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -44,6 +36,5 @@ ActiveRecord::Schema.define(version: 2021_03_30_130343) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "checkboxes", "tasks"
   add_foreign_key "checkboxes", "users"
 end
