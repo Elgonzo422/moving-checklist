@@ -13,17 +13,12 @@
         <li class="nav-item active">
           <%= link_to "Home", "#", class: "nav-link" %>
         </li>
-        <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
+        <li class="nav-item active">
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
         </li>
-        <li class="nav-item dropdown">
-          <i class="far fa-smile-beam changing-smiley"></i>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
+        <li> <i class="far fa-smile-beam changing-smiley"></i>
         </li>
+
       <% else %>
         <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
